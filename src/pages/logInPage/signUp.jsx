@@ -1,20 +1,47 @@
-import { TextInput, PasswordInput, Checkbox, Button } from '@mantine/core';
+import { TextInput, PasswordInput, Checkbox, Button } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
-export default function SignUp(){
-return (
-        <div className="flex bg-[#F8F2EE] justify-center text-center items-center min-h-screen">
-            {/* container */}
+export default function SignUp() {
+    return (
+        <div className="flex flex-col md:flex-row bg-[#F8F2EE] justify-center items-center min-h-screen p-4">
+
+            {/* Left Image Section */}
             <div
-                className="flex-none  w-[350px] h-[600px] rounded-tl-3xl rounded-bl-3xl bg-cover bg-center"
+                className="
+          w-full 
+          md:w-[350px] 
+          h-[250px] 
+          md:h-[600px] 
+          rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none
+          bg-cover bg-center
+        "
                 style={{ backgroundImage: "url('/foto1.png')" }}
+            ></div>
+
+            {/* Right White Box */}
+            <div
+                className="
+          bg-white 
+          w-full 
+          md:w-[350px] 
+          h-auto 
+          md:h-[600px] 
+          rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none 
+          text-center 
+          py-10
+        "
             >
-            </div>
-            <div className="bg-white w-[350px] flex-none h-[600px] rounded-tr-3xl rounded-br-3xl">
-                <p className="font-semibold text-4xl mt-20">Sign Up</p>
-                <p className="mx-[35px] mt-5 text-center">Create an account to manage your health anf you family's health</p>
-                <div className="flex flex-col gap-4 w-[300px] mx-auto">
+                <p className="font-semibold text-3xl md:text-4xl mt-5 md:mt-20">
+                    Sign Up
+                </p>
+
+                <p className="mx-6 mt-4 text-gray-600">
+                    Create an account to manage your health and your family's health.
+                </p>
+
+                <div className="flex flex-col gap-4 w-[90%] max-w-[300px] mx-auto mt-6">
+
                     <TextInput
                         placeholder="Email"
                         withAsterisk
@@ -24,10 +51,10 @@ return (
                             input: {
                                 border: "1px solid #ccc",
                                 borderRadius: "8px",
-                                marginTop: "25px"
-                            }
+                            },
                         }}
                     />
+
                     <PasswordInput
                         placeholder="Password"
                         withAsterisk
@@ -36,32 +63,38 @@ return (
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
-                                borderRadius: "8px"
-                            }
+                                borderRadius: "8px",
+                            },
                         }}
                     />
-                </div>
-                <div className="flex items-center justify-between my-[20px] mx-[25px]">
+
                     <Checkbox
                         label="I accept the terms of service"
                         icon={IconCheck}
-                        
+                        className="mt-2"
                     />
+
+                    <Button
+                        variant="filled"
+                        color="rgba(207, 0, 0, 1)"
+                        size="lg"
+                        radius="md"
+                        className="w-full"
+                    >
+                        Sign Up
+                    </Button>
                 </div>
-                <Button
-                    variant="filled"
-                    color="rgba(207, 0, 0, 1)"
-                    size="lg"
-                    radius="md"
-                    style={{ width: '300px' }}
-                >
-                    Sign Up
-                </Button>
-                <div className="h-[1px] w-[300px] mx-[25px] my-[20px] bg-gray-400"></div>
-                <p>Already have an account? <Link to="/login" className="text-black-500 font-semibold">
-          Log in
-        </Link></p>
+
+
+                <div className="h-[1px] w-[90%] max-w-[300px] bg-gray-300 mx-auto my-5"></div>
+
+                <p className="text-sm">
+                    Already have an account?{" "}
+                    <Link to="/login" className="font-semibold text-red-600">
+                        Log in
+                    </Link>
+                </p>
             </div>
         </div>
     );
-};
+}

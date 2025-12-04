@@ -1,21 +1,52 @@
-import { TextInput, PasswordInput, Checkbox, Button } from '@mantine/core';
+import { TextInput, PasswordInput, Checkbox, Button } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LogIn() {
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate("/home");
+    };
+
     return (
-        <div className="flex bg-[#F8F2EE] justify-center text-center items-center min-h-screen">
-            {/* container */}
+        <div className="flex flex-col md:flex-row bg-[#F8F2EE] justify-center items-center min-h-screen p-4">
+
+            {/* Left Image Section (mobile: full width, tablet/desktop: left side) */}
             <div
-                className="flex-none  w-[350px] h-[600px] rounded-tl-3xl rounded-bl-3xl bg-cover bg-center"
+                className="
+          w-full 
+          md:w-[350px] 
+          h-[250px] 
+          md:h-[600px] 
+          rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none
+          bg-cover bg-center
+        "
                 style={{ backgroundImage: "url('/foto1.png')" }}
+            ></div>
+
+            {/* Right White Box */}
+            <div
+                className="
+          bg-white 
+          w-full 
+          md:w-[350px] 
+          h-auto 
+          md:h-[600px] 
+          rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none 
+          text-center 
+          py-10
+        "
             >
-            </div>
-            <div className="bg-white w-[350px] flex-none h-[600px] rounded-tr-3xl rounded-br-3xl">
-                <p className="font-semibold text-4xl mt-20">Welcome Back</p>
-                <p className="mx-[35px] mt-5 text-center">Manage medications, track illnesses, and care for your loved ones.</p>
-                <div className="flex flex-col gap-4 w-[300px] mx-auto">
+                <p className="font-semibold text-3xl md:text-4xl mt-5 md:mt-20">
+                    Welcome Back
+                </p>
+
+                <p className="mx-6 mt-4 text-gray-600">
+                    Manage medications, track illnesses, and care for your loved ones.
+                </p>
+
+                <div className="flex flex-col gap-4 w-[90%] max-w-[300px] mx-auto mt-6">
                     <TextInput
                         placeholder="Email"
                         withAsterisk
@@ -25,10 +56,10 @@ export default function LogIn() {
                             input: {
                                 border: "1px solid #ccc",
                                 borderRadius: "8px",
-                                marginTop: "25px"
-                            }
+                            },
                         }}
                     />
+
                     <PasswordInput
                         placeholder="Password"
                         withAsterisk
@@ -37,35 +68,46 @@ export default function LogIn() {
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
-                                borderRadius: "8px"
-                            }
+                                borderRadius: "8px",
+                            },
                         }}
                     />
-                </div>
-                <div className="flex items-center justify-between my-[20px] mx-[25px]">
-                    <Checkbox
-                        label="Remember me"
-                        icon={IconCheck}
-                        
-                    />
 
-                    <a href="#" className="text-blue-600 hover:underline">
-                        Forgot password?
-                    </a>
+
+                    <div className="flex items-center justify-between w-full">
+                        <Checkbox
+                            label="Remember me"
+                            icon={IconCheck}
+                            styles={{
+                                root: { width: "auto" },
+                                inner: { width: "auto" },
+                                body: { width: "auto" }
+                            }}
+                        />
+                        <a href="#" className="text-blue-600 hover:underline text-sm">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <Button
+                        onClick={handleLogin}
+                        variant="filled"
+                        color="rgba(207, 0, 0, 1)"
+                        size="lg"
+                        radius="md"
+                        className="w-full"
+                    >
+                        Log In
+                    </Button>
                 </div>
-                <Button
-                    variant="filled"
-                    color="rgba(207, 0, 0, 1)"
-                    size="lg"
-                    radius="md"
-                    style={{ width: '300px' }}
-                >
-                    Log In
-                </Button>
-                <div className="h-[1px] w-[300px] mx-[25px] my-[20px] bg-gray-400"></div>
-                <p>Don't have an account? <Link to="/signup" className="text-black-500 font-semibold">
-          Sign up
-        </Link></p>
+                <div className="h-[1px] w-[90%] max-w-[300px] bg-gray-300 mx-auto my-5"></div>
+
+                <p className="text-sm">
+                    Don't have an account?{" "}
+                    <Link to="/signup" className="font-semibold text-red-600">
+                        Sign up
+                    </Link>
+                </p>
             </div>
         </div>
     );
