@@ -1,4 +1,4 @@
-import { TextInput, PasswordInput, Checkbox } from '@mantine/core';
+import { TextInput, PasswordInput, Checkbox, Button } from '@mantine/core';
 import { IconCheck } from "@tabler/icons-react";
 
 
@@ -36,17 +36,33 @@ export default function LogIn() {
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
-                                borderRadius: "8px",
-                                marginTop: "15px"
+                                borderRadius: "8px"
                             }
                         }}
                     />
                 </div>
-                <Checkbox
-                    label="Remember me"
-                    icon={IconCheck}
-                />
+                <div className="flex items-center justify-between my-[20px] mx-[25px]">
+                    <Checkbox
+                        label="Remember me"
+                        icon={IconCheck}
+                        
+                    />
 
+                    <a href="#" className="text-blue-600 hover:underline">
+                        Forgot password?
+                    </a>
+                </div>
+                <Button
+                    variant="filled"
+                    color="rgba(207, 0, 0, 1)"
+                    size="lg"
+                    radius="md"
+                    style={{ width: '300px' }}
+                >
+                    Log In
+                </Button>
+                <div className="h-[1px] w-[300px] mx-[25px] my-[20px] bg-gray-400"></div>
+                <p>Don't have an account? <a href='#' className='font-semibold'>Sing up</a></p>
             </div>
         </div>
     );
