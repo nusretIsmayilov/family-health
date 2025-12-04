@@ -2,9 +2,8 @@ import { TextInput, PasswordInput, Checkbox, Button } from '@mantine/core';
 import { IconCheck } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
-
-export default function LogIn() {
-    return (
+export default function SignUp(){
+return (
         <div className="flex bg-[#F8F2EE] justify-center text-center items-center min-h-screen">
             {/* container */}
             <div
@@ -13,8 +12,8 @@ export default function LogIn() {
             >
             </div>
             <div className="bg-white w-[350px] flex-none h-[600px] rounded-tr-3xl rounded-br-3xl">
-                <p className="font-semibold text-4xl mt-20">Welcome Back</p>
-                <p className="mx-[35px] mt-5 text-center">Manage medications, track illnesses, and care for your loved ones.</p>
+                <p className="font-semibold text-4xl mt-20">Sign Up</p>
+                <p className="mx-[35px] mt-5 text-center">Create an account to manage your health anf you family's health</p>
                 <div className="flex flex-col gap-4 w-[300px] mx-auto">
                     <TextInput
                         placeholder="Email"
@@ -44,14 +43,10 @@ export default function LogIn() {
                 </div>
                 <div className="flex items-center justify-between my-[20px] mx-[25px]">
                     <Checkbox
-                        label="Remember me"
+                        label="I accept the terms of service"
                         icon={IconCheck}
                         
                     />
-
-                    <a href="#" className="text-blue-600 hover:underline">
-                        Forgot password?
-                    </a>
                 </div>
                 <Button
                     variant="filled"
@@ -60,13 +55,13 @@ export default function LogIn() {
                     radius="md"
                     style={{ width: '300px' }}
                 >
-                    Log In
+                    Sign Up
                 </Button>
                 <div className="h-[1px] w-[300px] mx-[25px] my-[20px] bg-gray-400"></div>
-                <p>Don't have an account? <Link to="/signup" className="text-black-500 font-semibold">
-          Sign up
+                <p>Already have an account? <Link to="/login" className="text-black-500 font-semibold">
+          Log in
         </Link></p>
             </div>
         </div>
     );
-}
+};
