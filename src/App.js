@@ -5,6 +5,10 @@ import Home from './pages/homePage/home';
 import Features from "./pages/featuresPage/Features";
 import Pricing from "./pages/pricing/pricing";
 import Contact from "./pages/contactPage/Contact";
+import MedicationsManagement from "./pages/medicationsManagement/MedicationsManagement";
+import HealthHistory from "./pages/healthHistory/HealthHistory";
+import AppointmentReminders from "./pages/appointmentReminders/AppointmentReminders";
+import FamilyTree from "./pages/familyTree/FamilyTree";
 import './App.css';
 
 
@@ -19,6 +23,10 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/medicationsManagement" element={<MedicationsManagement />} />
+        <Route path="/healthHistory" element={<HealthHistory />} />
+        <Route path="/appointmentReminders" element={<AppointmentReminders />} />
+        <Route path="/familytree" element={<FamilyTree />} />
       </Routes>
     </BrowserRouter>
   );

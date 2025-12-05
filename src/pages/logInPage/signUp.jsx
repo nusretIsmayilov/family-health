@@ -1,36 +1,46 @@
 import { TextInput, PasswordInput, Checkbox, Button } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function SignUp() {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSignUp = () => {
+        // Backend yok → hiçbir işlem yapma
+        console.log("Sign Up clicked (no backend active)");
+    };
+
     return (
         <div className="flex flex-col md:flex-row bg-[#F8F2EE] justify-center items-center min-h-screen p-4">
 
             {/* Left Image Section */}
             <div
                 className="
-          w-full 
-          md:w-[350px] 
-          h-[250px] 
-          md:h-[600px] 
-          rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none
-          bg-cover bg-center
-        "
+                    w-full 
+                    md:w-[350px] 
+                    h-[250px] 
+                    md:h-[600px] 
+                    rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none
+                    bg-cover bg-center
+                "
                 style={{ backgroundImage: "url('/foto1.png')" }}
             ></div>
 
             {/* Right White Box */}
             <div
                 className="
-          bg-white 
-          w-full 
-          md:w-[350px] 
-          h-auto 
-          md:h-[600px] 
-          rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none 
-          text-center 
-          py-10
-        "
+                    bg-white 
+                    w-full 
+                    md:w-[350px] 
+                    h-auto 
+                    md:h-[600px] 
+                    rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none 
+                    text-center 
+                    py-10
+                "
             >
                 <p className="font-semibold text-3xl md:text-4xl mt-5 md:mt-20">
                     Sign Up
@@ -47,6 +57,7 @@ export default function SignUp() {
                         withAsterisk
                         size="lg"
                         radius="md"
+                        onChange={(e) => setEmail(e.target.value)}
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
@@ -60,6 +71,7 @@ export default function SignUp() {
                         withAsterisk
                         size="lg"
                         radius="md"
+                        onChange={(e) => setPassword(e.target.value)}
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
@@ -80,11 +92,11 @@ export default function SignUp() {
                         size="lg"
                         radius="md"
                         className="w-full"
+                        onClick={handleSignUp}
                     >
                         Sign Up
                     </Button>
                 </div>
-
 
                 <div className="h-[1px] w-[90%] max-w-[300px] bg-gray-300 mx-auto my-5"></div>
 

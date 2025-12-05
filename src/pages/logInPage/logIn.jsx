@@ -1,42 +1,47 @@
 import { TextInput, PasswordInput, Checkbox, Button } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function LogIn() {
     const navigate = useNavigate();
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleLogin = () => {
+        // Backend yok — direkt /home'a yönlendiriyoruz
         navigate("/home");
     };
 
     return (
         <div className="flex flex-col md:flex-row bg-[#F8F2EE] justify-center items-center min-h-screen p-4">
 
-            {/* Left Image Section (mobile: full width, tablet/desktop: left side) */}
+            {/* Left Image Section */}
             <div
                 className="
-          w-full 
-          md:w-[350px] 
-          h-[250px] 
-          md:h-[600px] 
-          rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none
-          bg-cover bg-center
-        "
+                    w-full 
+                    md:w-[350px] 
+                    h-[250px] 
+                    md:h-[600px] 
+                    rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none
+                    bg-cover bg-center
+                "
                 style={{ backgroundImage: "url('/foto1.png')" }}
             ></div>
 
             {/* Right White Box */}
             <div
                 className="
-          bg-white 
-          w-full 
-          md:w-[350px] 
-          h-auto 
-          md:h-[600px] 
-          rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none 
-          text-center 
-          py-10
-        "
+                    bg-white 
+                    w-full 
+                    md:w-[350px] 
+                    h-auto 
+                    md:h-[600px] 
+                    rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none 
+                    text-center 
+                    py-10
+                "
             >
                 <p className="font-semibold text-3xl md:text-4xl mt-5 md:mt-20">
                     Welcome Back
@@ -52,6 +57,7 @@ export default function LogIn() {
                         withAsterisk
                         size="lg"
                         radius="md"
+                        onChange={(e) => setEmail(e.target.value)}
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
@@ -65,6 +71,7 @@ export default function LogIn() {
                         withAsterisk
                         size="lg"
                         radius="md"
+                        onChange={(e) => setPassword(e.target.value)}
                         styles={{
                             input: {
                                 border: "1px solid #ccc",
@@ -73,16 +80,10 @@ export default function LogIn() {
                         }}
                     />
 
-
                     <div className="flex items-center justify-between w-full">
                         <Checkbox
                             label="Remember me"
                             icon={IconCheck}
-                            styles={{
-                                root: { width: "auto" },
-                                inner: { width: "auto" },
-                                body: { width: "auto" }
-                            }}
                         />
                         <a href="#" className="text-blue-600 hover:underline text-sm">
                             Forgot password?
@@ -100,6 +101,7 @@ export default function LogIn() {
                         Log In
                     </Button>
                 </div>
+
                 <div className="h-[1px] w-[90%] max-w-[300px] bg-gray-300 mx-auto my-5"></div>
 
                 <p className="text-sm">

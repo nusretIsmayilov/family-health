@@ -6,11 +6,11 @@ export default function Home() {
     return (
         <div className="flex flex-col bg-[#F8F2EE] min-h-screen">
             <Navbar />
-            <div className="flex flex-col  items-center my-10">
+            <div className="flex flex-col  items-center my-8">
                 <p className="font-semibold text-5xl">
                     A Smarter Way to Manage Your Health
                 </p>
-                <p className="text-xl my-10">
+                <p className="text-xl my-8">
                     Organize medications, track health history and stay on top of doctor appointments for you and your family.
                 </p>
                 <Button
@@ -23,59 +23,59 @@ export default function Home() {
                     Get Started
                 </Button>
             </div>
-            <div className="grid grid-cols-2 gap-[40px] max-w-[700px] mx-auto my-10 text-center place-items-center">
+            <div className="grid grid-cols-2 gap-[40px] max-w-[700px] mx-auto m7-8 text-center place-items-center">
 
                 {/* 1. Kutu */}
-                <a href="#" className="max-w-[320px] w-full mx-auto bg-white rounded-2xl">
+                <a href="medicationsManagement" className="max-w-[320px] w-full mx-auto bg-white rounded-2xl py-10 px-10">
                     <div className="flex flex-col items-center">
                         <img
-                            src="/home-foto-1.png"
+                            src="/drug.png"
                             alt="Medication Icon"
                             className="w-20 h-20 mb-3"
                         />
-                        <div className="font-semibold text-4xl">
+                        <div className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
                             Medications <br /> Management
                         </div>
                     </div>
                 </a>
 
                 {/* 2. Kutu */}
-                <a href="#" className="max-w-[320px] w-full mx-auto bg-white rounded-2xl">
+                <a href="healthHistory" className="max-w-[320px] w-full mx-auto bg-white rounded-2xl py-10 px-10">
                     <div className="flex flex-col items-center">
                         <img
-                            src="/home-foto-2.png"
+                            src="/medical-check.png"
                             alt="Health Icon"
                             className="w-20 h-20 mb-3"
                         />
-                        <div className="font-semibold text-4xl">
+                        <div className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
                             Health <br /> History
                         </div>
                     </div>
                 </a>
 
                 {/* 3. Kutu */}
-                <a href="#" className="max-w-[320px] w-full mx-auto my-5 bg-white rounded-2xl">
+                <a href="appointmentReminders" className="max-w-[320px] w-full mx-auto my-5 bg-white rounded-2xl py-10 px-10">
                     <div className="flex flex-col items-center">
                         <img
-                            src="/home-foto-1.png"
+                            src="/schedule.png"
                             alt="Appointment Icon"
                             className="w-20 h-20 mb-3"
                         />
-                        <div className="font-semibold text-4xl">
+                        <div className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
                             Appointment <br /> Reminders
                         </div>
                     </div>
                 </a>
 
                 {/* 4. Kutu */}
-                <a href="#" className="max-w-[320px] w-full mx-auto my-5 bg-white rounded-2xl">
+                <a href="familytree" className="max-w-[320px] w-full mx-auto my-5 bg-white rounded-2xl py-10 px-10">
                     <div className="flex flex-col items-center">
                         <img
-                            src="/home-foto-1.png"
+                            src="/family-tree.png"
                             alt="Family Icon"
                             className="w-20 h-20 mb-3"
                         />
-                        <div className="font-semibold text-4xl">
+                        <div className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
                             Family <br /> Tree
                         </div>
                     </div>
